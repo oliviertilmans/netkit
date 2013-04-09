@@ -4,3 +4,6 @@
 [submodule "kernel"]
 	path = kernel
 	url = git://github.com/fingon/netkit-uml-kernel.git
+[submodule "uml-utilities"]
+	path = uml-utilities
+	url = git://github.com/fingon/uml-utilities.git

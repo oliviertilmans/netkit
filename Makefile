@@ -28,6 +28,29 @@ help:
 	@echo "run the corresponding Makefile in the applicable directory."
 	@echo
 
+build: build-tools
+	make -C fs filesystem
+	make -C kernel -j 9 kernel
+
+# needed: port-helper, tunctl, uml_mconsole, uml_switch
+build-tools:
+	rm -rf bin/uml_tools
+	mkdir -p bin/uml_tools
+	make -C uml-utilities/lib
+	make -C uml-utilities/port-helper
+	mv uml-utilities/port-helper/port-helper bin/uml_tools
+	make -C uml-utilities/tunctl
+	mv uml-utilities/tunctl/tunctl bin/uml_tools
+	make -C uml-utilities/mconsole
+	mv uml-utilities/mconsole/uml_mconsole bin/uml_tools
+	make -C uml-utilities/uml_switch
+	mv uml-utilities/uml_switch/uml_switch bin/uml_tools
+
+clean:
+	rm -rf bin/uml_tools
+	make -C fs clean
+	make -C kernel clean
+
 pack: ../netkit-$(NK_VERSION).tar.bz2
 	mv ../netkit-$(NK_VERSION).tar.bz2 .
 
