@@ -52,6 +52,8 @@ uml-utilities.build:
 
 clean:
 	rm -rf bin/uml_tools
+	$(MAKE) -C fs clean
+	$(MAKE) -C kernel clean
 
 dirclean: clean
 
