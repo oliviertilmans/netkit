@@ -1,9 +1,9 @@
 [submodule "fs"]
 	path = fs
-	url = git://github.com/fingon/netkit-uml-filesystem.git
+	url = git://github.com/oliviertilmans/netkit-uml-filesystem.git
 [submodule "kernel"]
 	path = kernel
-	url = git://github.com/fingon/netkit-uml-kernel.git
+	url = git://github.com/oliviertilmans/netkit-uml-kernel.git
 [submodule "uml-utilities"]
 	path = uml-utilities
 	url = git://github.com/fingon/uml-utilities.git
